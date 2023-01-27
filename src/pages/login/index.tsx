@@ -42,12 +42,7 @@ export function Login() {
   } = useForm<LoginCredentialsProps>({ resolver: yupResolver(yupSchema) });
 
   const onSubmit = (credentials: LoginCredentialsProps) => {
-    if (
-      credentials.password === "teste123" &&
-      credentials.username === "rianlandim222@gmail.com"
-    ) {
-      navigation.navigate("Home");
-    }
+    navigation.navigate("Home");
   };
 
   return (
@@ -56,7 +51,7 @@ export function Login() {
         <Box flex={1} />
         <VStack flex={1} width="80%">
           <FormControl isInvalid={!!errors.username}>
-            <FormControl.Label>Username</FormControl.Label>
+            <FormControl.Label>Usuário</FormControl.Label>
             <Controller
               control={control}
               name="username"
@@ -73,7 +68,7 @@ export function Login() {
             </FormControl.ErrorMessage>
           </FormControl>
           <FormControl isInvalid={!!errors.password}>
-            <FormControl.Label>Password</FormControl.Label>
+            <FormControl.Label>Senha</FormControl.Label>
             <Controller
               control={control}
               name="password"
